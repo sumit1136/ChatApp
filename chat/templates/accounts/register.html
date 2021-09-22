@@ -1,0 +1,23 @@
+<!-- templates/registration/signup.html -->
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+  <h2>Sign up</h2>
+  <form action="signup" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="username"><br>
+    <input type="password" name="password" placeholder="Enter password"><br>
+    <input type="password" name="password2" placeholder="confirm password"><br>
+    <p>{{a}}+{{b}}=</p><input type="text" name="c"><br>
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <div>
+    {% for message in messages %}
+    <h3>{{message}}</h3>
+    {% endfor %}
+  </div>
+  
+{% endblock %}
