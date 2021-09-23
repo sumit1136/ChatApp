@@ -14,7 +14,7 @@ c=0
 def signup(request):
     if request.user.is_authenticated:
         messages.error(request,"Already logged in")
-        return redirect('profile')
+        return redirect('profile')      
     global c
     if(request.method=="POST"):
         username = request.POST.get('username')
