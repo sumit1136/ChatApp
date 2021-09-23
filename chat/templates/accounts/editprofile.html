@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+  <h2>Edit Profile</h2>
+  <form action="editprofile" method="post">
+    {% csrf_token %}
+    <input type="text" name="first_name" value="{{user.first_name}}"><br>
+    <input type="text" name="last_name" value="{{user.last_name}}"><br>
+    <input type="email" name="email" value="{{user.email}}"><br>
+    <button type="submit">Save Changes</button>
+  </form>
+  <p><a href="{% url 'profile' %}">Profile</a></p>
+
+  <div>
+    {% for message in messages %}
+    <h3>{{message}}</h3>
+    {% endfor %}
+  </div>
+  
+{% endblock %}

@@ -1,0 +1,23 @@
+<!-- templates/registration/signup.html -->
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+
+<div>
+   {% for message in messages %}
+   <h3>{{message}}</h3>
+   {% endfor %}
+ </div>
+  <h2>Profile</h2>
+ <div class="container">
+    <p>Full Name: {{user.first_name}} {{user.last_name}}</p>
+    <p>Email: {{user.email}}</p>
+    <p><a href="{% url 'editprofile' %}">Edit Profile</a></p>
+    <p><a href="{% url 'logout' %}">Log Out</a></p>
+    <p><a href="{% url 'index' %}">Chat</a></p>
+    <p><a href="{% url 'search' %}">Search</a></p>
+ </div>
+  
+{% endblock %}

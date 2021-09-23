@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Search{% endblock %}
+
+{% block content %}
+<h2>Search Result</h2>
+<div class="container">
+    <form action="search" method="POST">
+        {% csrf_token %}
+        <input type="text" name="q" placeholder="Enter username or name"><br>
+        <input type="submit" value="search">
+    </form>
+    <div>
+        {% if usr %}
+            {% for u in usr %}
+            <p>{{u.username}}</p>
+            <p>{{u.first_name}} {{u.last_name}}</p>
+            {% endfor %}
+        {% endif %}
+
+    </div>
+    <p><a href="{% url 'editprofile' %}">Edit Profile</a></p>
+    <p><a href="{% url 'logout' %}">Log Out</a></p>
+    <p><a href="{% url 'index' %}">Chat</a></p>
+    <p><a href="{% url 'search' %}">Search</a></p>
+</div>
+
+{% endblock %}

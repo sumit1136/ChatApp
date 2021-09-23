@@ -8,6 +8,9 @@
   <form action="signup" method="post">
     {% csrf_token %}
     <input type="text" name="username" placeholder="username"><br>
+    <input type="text" name="first_name" placeholder="Enter First name"><br>
+    <input type="text" name="last_name" placeholder="Enter Last name"><br>
+    <input type="email" name="email" placeholder="Enter email"><br>
     <input type="password" name="password" placeholder="Enter password"><br>
     <input type="password" name="password2" placeholder="confirm password"><br>
     <p>{{a}}+{{b}}=</p><input type="text" name="c"><br>

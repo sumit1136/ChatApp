@@ -9,6 +9,7 @@
     <input id="chat-message-input" type="text" size="100"><br>
     <input id="chat-message-submit" type="button" value="Send">
     {{ room_name|json_script:"room-name" }}
+    <input type="hidden" value="{{request.user.username}}" id='user_detail'>
     <script>
         const roomName = JSON.parse(document.getElementById('room-name').textContent);
 
@@ -22,7 +23,8 @@
 
         chatSocket.onmessage = function(e) {
             const data = JSON.parse(e.data);
-            document.querySelector('#chat-log').value += (data.message + '\n');
+            const username = document.querySelector('#user_detail').value;
+            document.querySelector('#chat-log').value += username+'\t:\t'+(data.message + '\n');
         };
 
         chatSocket.onclose = function(e) {

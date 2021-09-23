@@ -1,13 +1,14 @@
 <!-- templates/registration/login.html -->
 <h2>Log In</h2>
-<form action = "signin" method="post">
-  {% csrf_token %}
-  <input type="text" name="username" placeholder="Enter username"><br>
-  <input type="password" name="password" placeholder="Enter password"><br>
-  <button type="submit">Log In</button>
-</form>
 <div>
   {% for message in messages %}
   <h3>{{message}}</h3>
   {% endfor %}
 </div>
+<form action = "signin" method="post">
+  {% csrf_token %}
+  <input type="text" name="username" placeholder="Enter username"><br>
+  <input type="password" name="password" placeholder="Enter password"><br>
+  <button type="submit">Log In</button>
+  <p><a href="{% url 'signup' %}">Sign Up</a></p>
+</form>
