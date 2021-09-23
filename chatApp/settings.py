@@ -26,7 +26,7 @@ SECRET_KEY = '4%$t@8mn=0cxekg3wc-m=ju-n8wa%=3d$wf^%pf^6zs7!(d*uk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['immense-basin-58214.herokuapp.com']
 
 
 # Application definition
