@@ -13,8 +13,8 @@
     <div>
         {% if usr %}
             {% for u in usr %}
-            <p>{{u.username}}</p>
-            <p>{{u.first_name}} {{u.last_name}}</p>
+            <p>Username: {{u.username}}</p>
+            <p>Full Name: {{u.first_name}} {{u.last_name}}</p>
             {% endfor %}
         {% endif %}
 
